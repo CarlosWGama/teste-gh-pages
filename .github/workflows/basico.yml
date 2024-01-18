@@ -31,8 +31,7 @@ jobs:
         run: |
           git config --local user.email "carloswgama@gmail.com"
           git config --local user.name "Carlos W. Gama"
-      - run: git remote update
       - run: git fetch 
       - run: git checkout origin/gh-pages
-      - run: git merge origin/main
+      - run: git merge --no-ff main
       - run: git push
