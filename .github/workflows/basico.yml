@@ -6,7 +6,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 #acessa o projeto
-      - uses: actions/setup-node #libera uso do node
+      - uses: actions/setup-node@v3 #libera uso do node
         with:
           node-version: 18
       - run: echo 'Inicia o build'
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 #acessa o projeto
-      - uses: actions/setup-node #libera uso do node
+      - uses: actions/setup-node@v3 #libera uso do node
         with:
           node-version: 18
       - run: echo 'Testando'
