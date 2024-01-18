@@ -1,0 +1,14 @@
+name: Exemplo Básico
+on: push
+jobs:
+  #Processo de build
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Realizando build'
+
+  #Processo de teste
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Testando'
