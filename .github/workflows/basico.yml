@@ -24,9 +24,13 @@ jobs:
   deploy:
     needs: test
     runs-on: ubuntu-latest
+    permissions:
+      pages: write
     steps:
       - name: Liberando acesso ao github
         uses: actions/checkout@v4 
+        env:
+          GITHUB_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
       - name: Configura o git
         run: |
           git config --local user.email "carloswgama@gmail.com"
