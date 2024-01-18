@@ -1,14 +1,32 @@
-name: Exemplo Básico
-on: push
+name: Enviando projeto para produção
+on: 
+  push:
+    branches:
+      - main
 jobs:
   #Processo de teste
   test:
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Realiza os testes'
+      - uses: actions/checkout@v4 #acessa o projeto
+      
+      - name: Instalando as dependencias
+        uses: actions/setup-node@v3 #libera uso do node
+        with:
+          node-version: 18
+      - run: echo 'Testando'
+      - run: npm install
 
+      - name: Testando
+        run: npm test
+
+  #Processo de deploy
   deploy:
     needs: test
     runs-on: ubuntu-latest
     steps:
-      - run: echo 'Manda o projeto para produção'
+      - name: Liberando acesso ao github
+        uses: actions/checkout@v4 
+      - run: git checkout gh-pages
+      - run: git merge main
+      - run: git push
