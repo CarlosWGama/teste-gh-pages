@@ -8,7 +8,7 @@ describe('Teste básico',() => {
     })
     //Exemplo de um teste
     test('Teste 2', () => {
-        expect(1+1).toEqual(5);
+        expect(1+1).toEqual(2);
     });
 })
     
