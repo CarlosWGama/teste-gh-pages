@@ -27,6 +27,12 @@ jobs:
     steps:
       - name: Liberando acesso ao github
         uses: actions/checkout@v4 
-      - run: git checkout gh-pages
+      - name: Configura o git
+        run: |
+          git config --local user.email "carloswgama@gmail.com"
+          git config --local user.name "Carlos W. Gama"
+      - run: git remote update
+      - run: git fetch 
+      - run: git checkout --track origin/gh-pages
       - run: git merge main
       - run: git push
