@@ -8,6 +8,7 @@ jobs:
       - run: echo 'Realiza os testes'
 
   deploy:
+    needs: test
     runs-on: ubuntu-latest
     steps:
       - run: echo 'Manda o projeto para produção'
