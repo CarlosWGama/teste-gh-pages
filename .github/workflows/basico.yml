@@ -32,6 +32,6 @@ jobs:
           git config --local user.email "carloswgama@gmail.com"
           git config --local user.name "Carlos W. Gama"
       - run: git fetch 
-      - run: git checkout origin/gh-pages
-      - run: git merge --allow-unrelated-histories main
-      - run: git push
+      - run: git checkout -B gh-pages
+      - run: git merge main
+      - run: git push --force origin gh-pages
