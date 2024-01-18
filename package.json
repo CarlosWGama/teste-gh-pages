@@ -1,0 +1,25 @@
+{
+  "name": "html",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CarlosWGama/teste-gh-pages.git"
+  },
+  "author": "Carlos W. Gama",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CarlosWGama/teste-gh-pages/issues"
+  },
+  "homepage": "https://github.com/CarlosWGama/teste-gh-pages#readme",
+  "dependencies": {
+    "jest": "^29.7.0"
+  }
+}
