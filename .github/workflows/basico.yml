@@ -33,5 +33,5 @@ jobs:
           git config --local user.name "Carlos W. Gama"
       - run: git fetch 
       - run: git checkout origin/gh-pages
-      - run: git merge --no-ff main
+      - run: git merge --allow-unrelated-histories main
       - run: git push
