@@ -1,25 +1,19 @@
 name: Exemplo Básico
 on: push
 jobs:
-  #Processo de build
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4 #acessa o projeto
-      - uses: actions/setup-node@v3 #libera uso do node
-        with:
-          node-version: 18
-      - run: echo 'Inicia o build'
-      - run: npm install
-
   #Processo de teste
   test:
-    needs: build
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4 #acessa o projeto
-      - uses: actions/setup-node@v3 #libera uso do node
+      
+      - name: Instalando as dependencias
+        uses: actions/setup-node@v3 #libera uso do node
         with:
           node-version: 18
       - run: echo 'Testando'
-      - run: npm test
+      - run: npm install
+
+  
+      - name: Testando
+        run: npm test
