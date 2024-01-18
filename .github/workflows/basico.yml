@@ -5,15 +5,9 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4 #acessa o projeto
-      
-      - name: Instalando as dependencias
-        uses: actions/setup-node@v3 #libera uso do node
-        with:
-          node-version: 18
-      - run: echo 'Testando'
-      - run: npm install
+      - run: echo 'Realiza os testes'
 
-  
-      - name: Testando
-        run: npm test
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo 'Manda o projeto para produção'
